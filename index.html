@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js"></script>
+    <h1>Bestilling av kinobiletter</h1>
+</head>
+<body>
+<form>
+    <select id="film" required>
+        <option value="">Select a film</option>
+        <option value="pirates">Pirates of the Caribbean</option>
+        <option value="star_wars">Star Wars: Episode II</option>
+        <option value="ted">Ted: The Movie</option>
+    </select><span id="filmError" style="color:red;"></span>
+    <br>
+    <br>
+    Antall: <input type="number" id="antall" min="1" required><span id="antallError" style="color:red;"></span>
+    <br>
+    <label for="fornavn">Fornavn:</label>
+    <input id="fornavn" type="text" required /><span id="fornavnError" style="color:red;"></span>
+    <br>
+    <label for="etternavn">Etternavn:</label>
+    <input type="text" id="etternavn">
+    <br>
+    <label for="telefonnr">Telefonnr:</label>
+    <input type="tel" id="telefonnr">
+    <br>
+    <label for="epost">Epost:</label>
+    <input type="email" id="epost">
+    <br>
+    <button type="button" onclick="hentData()">"Bestill her!"</button>
+    <div id="hentData"></div>
+    <br>
+<!--    I feel that it is more handy with one span than making one for each input. The span will show the errors anyways-->
+    <div id="personError" style="color:red;"><span></span></div>
+    <br>
+    Alle biletter:
+    <br>
+    <br>
+    <button type="button" onclick="fjernData()">"Slett bilettvalg!"</button>
+    <br>
+</form>
+
+</body>
+</html>
