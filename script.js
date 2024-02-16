@@ -80,11 +80,12 @@ function validerData() {
     if (!etternavn.value.trim()) {
         document.getElementById("personError").innerHTML += 'Last name is required.<br>';
     }
-    if (telefonnr.value.trim() === "") {
-        document.getElementById("personError").innerHTML += 'Phone number is required.<br>';
+    const tlfnummerRegex = /^(\+47)?\s?(\d{2}\s?){4}$/;
+    if (!tlfnummerRegex.test(telefonnr.value.trim())) {
+        document.getElementById("personError").innerHTML += 'Please enter a valid Norwegian phone number.<br>';
     }
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-ZåäöÅÄÖ]{2,}$/;
     if (!emailRegex.test(epost.value.trim())) {
         document.getElementById("personError").innerHTML += 'Please enter a valid email address.<br>';
     }
